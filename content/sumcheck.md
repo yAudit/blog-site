@@ -1,7 +1,7 @@
 ---
 title: "Sum-Check: The Backbone of ZK Proofs"
 subtitle: "Compressing Computation One Bit at a Time"
-gh-repo: electisec/blog-site
+gh-repo: yaudit/blog-site
 tags: [cryptography, algebra, polynomial]
 author: teddav
 twitter: https://x.com/0xteddav

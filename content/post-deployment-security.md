@@ -1,7 +1,7 @@
 ---
 title: Post-deployment Security
 subtitle: Fixing a Smart Contract Security Blind Spot
-gh-repo: electisec/blog-site
+gh-repo: yaudit/blog-site
 tags: [security-pipeline]
 author: engn33r
 twitter: https://x.com/bl4ckb1rd71

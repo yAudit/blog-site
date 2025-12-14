@@ -1,7 +1,7 @@
 ---
 title: DeFi Design Takeaways from DeFi Risk Modelling
 subtitle: Summarizing economic implications for good designs
-gh-repo: electisec/blog-site
+gh-repo: yaudit/blog-site
 tags: [economics]
 author: engn33r
 twitter: https://x.com/bl4ckb1rd71
@@ -12,7 +12,7 @@ date: 2024-05-03
 
 Everyone involved in the rollout of a protocol has an interest in providing the best possible protocol design to end users. A user doesn't care if they lose value due to an arithmetic error or due to a bad design choice - the user's end result is the same. So while security experts are often focused on finding implementation errors in a protocol's design, this can miss the forest for the trees when the protocol implementation is perfect but the design is wrong or suboptimal.
 
-With this in mind, it makes sense to learn what research and conclusions exist about optimal DeFi protocol designs. And although this makes sense, this post is likely the first time that a summary of DeFi economic modelling research has been presented to a smart contract security or developer audience. If you want to learn more about this topic, join and discuss in the [DeFi Economic Modelling research channel in the Electisec Discord](https://discord.gg/a8JVZ6gF) or check out [this repository](https://github.com/engn33r/DeFi-Risk-Modelling-Awesome) which lists similar resources.
+With this in mind, it makes sense to learn what research and conclusions exist about optimal DeFi protocol designs. And although this makes sense, this post is likely the first time that a summary of DeFi economic modelling research has been presented to a smart contract security or developer audience. If you want to learn more about this topic, join and discuss in the [DeFi Economic Modelling research channel in the yAudit Discord](https://discord.gg/a8JVZ6gF) or check out [this repository](https://github.com/engn33r/DeFi-Risk-Modelling-Awesome) which lists similar resources.
 
 The whitepaper summaries below are not intended to replace reading the actual whitepapers, which are linked to in each header title. However, these summaries should make it easier to determine the core message of each paper which allows the reader to select which papers are most relevant to read for particular situations. One illustration is selected from each paper to highlight a key point presented.
 

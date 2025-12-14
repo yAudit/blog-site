@@ -77,22 +77,6 @@ export const Icons = {
       ></path>
     </svg>
   ),
-  telegram: (props: IconProps) => (
-    <svg
-      viewBox="0 0 24 24"
-      width="50px"
-      height="50px"
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}
-    >
-      <path
-        fill="currentColor"
-        d="M19.2,4.4L2.9,10.7c-1.1,0.4-1.1,1.1-0.2,1.3l4.1,1.3l1.6,4.8c0.2,0.5,0.1,0.7,0.6,0.7c0.4,0,0.6-0.2,0.8-0.4
-	c0.1-0.1,1-1,2-2l4.2,3.1c0.8,0.4,1.3,0.2,1.5-0.7l2.8-13.1C20.6,4.6,19.9,4,19.2,4.4z M17.1,7.4l-7.8,7.1L9,17.8L7.4,13l9.2-5.8
-	C17,6.9,17.4,7.1,17.1,7.4z"
-      ></path>
-    </svg>
-  ),
 };
 
 const DATA = {
@@ -111,14 +95,9 @@ const DATA = {
         url: "https://www.github.com/yaudit",
         icon: Icons.github,
       },
-      Telegram: {
-        name: "Telegram",
-        url: "https://t.me/yaudit",
-        icon: Icons.telegram,
-      },
       X: {
         name: "X",
-        url: "https://www.x.com/yaudit",
+        url: "https://www.x.com/yAuditDAO",
         icon: Icons.x,
       },
       youtube: {
@@ -148,10 +127,7 @@ export function DockDemo() {
                     href={item.href}
                     target="_blank"
                     aria-label={item.label}
-                    className={cn(
-                      buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-14 rounded-full"
-                    )}
+                    className="inline-flex items-center justify-center size-14 rounded-full"
                   >
                     <item.icon className="size-4" />
                   </a>
@@ -171,10 +147,7 @@ export function DockDemo() {
                     href={social.url}
                     target="_blank"
                     aria-label={social.name}
-                    className={cn(
-                      buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-12 rounded-full"
-                    )}
+                    className="inline-flex items-center justify-center size-12 rounded-full"
                   >
                     <social.icon className="size-4" />
                   </a>

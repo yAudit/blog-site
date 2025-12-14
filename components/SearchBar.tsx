@@ -21,7 +21,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
       </div>
       <input
         type="text"
-        className="block w-full pl-10 pr-3 py-2 border border-button leading-5 bg-background focus:outline-none focus:button focus:ring-1 focus:ring-primary text-title sm:text-sm"
+        className="block w-full pl-10 pr-3 py-2 leading-5 bg-background focus:outline-none text-title sm:text-sm"
         placeholder="Search blog posts..."
         value={query}
         onChange={handleSearch}

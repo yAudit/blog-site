@@ -1,7 +1,7 @@
 ---
 title: "From Layered to General: How Virgo++ Broke the Linear Time Barrier in GKR"
 subtitle: "Subset wiring and claim combination: the path to linear time GKR"
-gh-repo: electisec/blog-site
+gh-repo: yaudit/blog-site
 tags: [cryptography, algebra, polynomial]
 author: flyingnobita
 twitter: https://x.com/flyingnobita
@@ -10,7 +10,7 @@ date: 2025-08-27
 
 ## Introducing Virgo++
 
-Despite being introduced by Goldwasser et al.[^1] as far back as 2008, the GKR protocol and its line of work remain among the most popular verifiable computation protocols today. In the Virgo++[^2] paper by Zhang et al., the authors introduce a method to execute the GKR protocol for general circuits with linear proving time. In this post, we will discuss the techniques mentioned in the paper and provide some intuition on how they work. We encourage the readers to read the paper for further insights and to gain a complete view of the material mentioned in this blog post. If you are not familiar with the GKR protocol or need a refresher, take a look at our [introduction to GKR article](https://blog.electisec.com/gkr).
+Despite being introduced by Goldwasser et al.[^1] as far back as 2008, the GKR protocol and its line of work remain among the most popular verifiable computation protocols today. In the Virgo++[^2] paper by Zhang et al., the authors introduce a method to execute the GKR protocol for general circuits with linear proving time. In this post, we will discuss the techniques mentioned in the paper and provide some intuition on how they work. We encourage the readers to read the paper for further insights and to gain a complete view of the material mentioned in this blog post. If you are not familiar with the GKR protocol or need a refresher, take a look at our [introduction to GKR article](https://blog.yaudit.dev/gkr).
 
 ## Problem with GKR
 

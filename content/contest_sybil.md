@@ -1,7 +1,7 @@
 ---
 title: "The Sybilooor's Guide to Audit Competition Math"
 subtitle: "A guide on exploiting audit competition math for fun & profit"
-gh-repo: electisec/blog-site
+gh-repo: yaudit/blog-site
 tags: [misc]
 author: Drastic Watermelon
 twitter: https://x.com/DrasticWM
@@ -244,7 +244,7 @@ That's quite a change in the profitability heatmap: not only have they shifted t
 
 ### Code
 
-The small python file used to conduct the analysis and generate the data visualizations can be found at [repo](https://github.com/electisec/contest_sybil_research).
+The small python file used to conduct the analysis and generate the data visualizations can be found at [repo](https://github.com/yaudit/contest_sybil_research).
 
 ### Additional Visualizations
 

@@ -1,7 +1,7 @@
 ---
 title: From a failing test to calling SEAL911
 subtitle: A small detail influencing major cryptographic libraries
-gh-repo: electisec/blog-site
+gh-repo: yaudit/blog-site
 tags: [cryptography, RFC6979]
 author: Oba
 twitter: https://x.com/obatirou

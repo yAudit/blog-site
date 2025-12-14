@@ -1,7 +1,7 @@
 ---
 title: Small Steps in Automating Security
 subtitle: Detecting Incorrect Interface Definitions (in Vyper!)
-gh-repo: electisec/blog-site
+gh-repo: yaudit/blog-site
 tags: [vyper]
 author: engn33r
 twitter: https://x.com/bl4ckb1rd71
@@ -189,9 +189,9 @@ interface PriceOracle:
 
 ## Automated detection with Vyper Interface Scanner
 
-To automate the detection of the issues described above, Electisec is releasing the [Vyper Interface Scanner](https://github.com/electisec/vyper-interface-scanner). It's a basic proof of concept tool that demonstrates the detection of these interface issues. It is not heavily tested and is guaranteed to have some bugs, but even in its current state, it has helped to save time in detecting these types of issues. Ideally, a more robust future version of such a tool would rely on the Vyper AST rather than string parsing, but the proof of concept should be sufficient for basic usage and demonstration purposes. This tool has been tested primarily on Vyper 3.10, so keep in mind the upcoming Vyper 4.X release may not be fully supported.
+To automate the detection of the issues described above, yAudit is releasing the [Vyper Interface Scanner](https://github.com/yaudit/vyper-interface-scanner). It's a basic proof of concept tool that demonstrates the detection of these interface issues. It is not heavily tested and is guaranteed to have some bugs, but even in its current state, it has helped to save time in detecting these types of issues. Ideally, a more robust future version of such a tool would rely on the Vyper AST rather than string parsing, but the proof of concept should be sufficient for basic usage and demonstration purposes. This tool has been tested primarily on Vyper 3.10, so keep in mind the upcoming Vyper 4.X release may not be fully supported.
 
-The [Vyper Interface Scanner](https://github.com/electisec/vyper-interface-scanner) repository includes basic user documentation, but let's look at a simple example of using the tool.
+The [Vyper Interface Scanner](https://github.com/yaudit/vyper-interface-scanner) repository includes basic user documentation, but let's look at a simple example of using the tool.
 
 Consider a scenario where a caller contract Factory.vy contains an interface Exchange that is used when calling the contract Exchange.vy to deploy and configure multiple Exchange.vy from this Factory contract. To use the Vyper Interface Scanner tool to check this integration, first install Vyper with `pip install vyper` and then run:
 

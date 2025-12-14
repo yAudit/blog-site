@@ -23,7 +23,7 @@ const Navbar = () => {
     <>
       <nav className="w-full flex h-18 items-center justify-between top-0 py-6">
         {/* Logo section */}
-        <div className="flex flex-row gap-4 text-primary items-center text-xl lg:ml-[20vw] ml-4">
+        <div className="flex flex-row text-primary items-center text-xl lg:ml-[20vw] ml-4">
           <Link href="https://yaudit.dev/">
             <img
               alt="Logo"
@@ -35,14 +35,14 @@ const Navbar = () => {
 
         {/* Mobile menu button */}
         <button
-          className="px-8 py-3 lg:hidden"
+          className="px-8 py-3 lg:hidden text-deepblue dark:text-white"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           <MenuOutlined />
         </button>
 
         {/* Desktop menu */}
-        <div className="hidden lg:flex flex-row items-center gap-1 lg:mr-[20vw]">
+        <div className="hidden lg:flex flex-row items-center lg:mr-[20vw]">
           <Link href="https://reports.yaudit.dev/">
             <Button text="Reports" />
           </Link>
@@ -65,7 +65,7 @@ const Navbar = () => {
             <Button text="Team" />
           </Link>
           <Link href="https://yaudit.dev/contact-us">
-            <button className="px-8 py-3 text-md font-bold bg-deepblue text-white hover:bg-white hover:text-deepblue hover:border hover:border-deepblue dark:hover:bg-white dark:hover:text-deepblue transition-all duration-700">
+            <button className="px-8 py-3 text-md font-bold bg-deepblue text-white hover:bg-white hover:text-deepblue hover:border hover:border-deepblue dark:hover:bg-black dark:hover:text-deepblue transition-all duration-700">
               Contact
             </button>
           </Link>

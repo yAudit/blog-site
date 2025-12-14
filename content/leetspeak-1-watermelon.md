@@ -1,14 +1,14 @@
 ---
-title: "Electisec leet-speak #1 ft. Drastic Watermelon"
-subtitle: "Get to know our resident auditors who make Electisec special"
-gh-repo: electisec/blog-site
+title: "yAudit leet-speak #1 ft. Drastic Watermelon"
+subtitle: "Get to know our resident auditors who make yAudit special"
+gh-repo: yaudit/blog-site
 tags: [resident-spotlight]
 author: nexus
 twitter: https://x.com/Nexuscode11
 date: 2025-05-19
 ---
 
-# Electisec leet-speak #1 ft. Drastic Watermelon
+# yAudit leet-speak #1 ft. Drastic Watermelon
 Welcome to our new series where we give the stage to our amazing residents and get to know the people behind cat and anime PFPs.
 
 Our first leet-speaker is 🥁🥁🥁 [Drastic Watermelon](https://x.com/watermelon_sec), our smart contract resident auditor!
@@ -19,18 +19,18 @@ We chat with 🍉 and see how the seeds of web3 security were planted (no pun in
 
 <img src="/watermelon.jpeg" width="70%"  style="display: block; margin: 0 auto" />
 
-## Tell us about your journey to Electisec 🛣️
+## Tell us about your journey to yAudit 🛣️
 
-I graduated from university a couple of months after joining Electisec. Before, I was participating in every hackathon I could find, just having a fun time with uni friends.
+I graduated from university a couple of months after joining yAudit. Before, I was participating in every hackathon I could find, just having a fun time with uni friends.
 
-I first heard about Electisec when I met two DAO members in Bogotá at Devcon 6. They showed me what a fellowship looked like and what previous fellows had achieved after participating. Needless to say, as soon as I got back home, I immediately started preparing for the next smart contract fellowship 🤓.
+I first heard about yAudit when I met two DAO members in Bogotá at Devcon 6. They showed me what a fellowship looked like and what previous fellows had achieved after participating. Needless to say, as soon as I got back home, I immediately started preparing for the next smart contract fellowship 🤓.
 
 ## How did the fellowship shape your security career? 🌱
-Before the fellowship, my auditing experience was mostly solo competitions. While that helped me sharpen my individual skills, the [Electisec Fellowship](https://electisec.com/fellowships) introduced me to a new way of working—collaborative auditing. Working with a team allowed me to see different approaches to problem-solving, learn from my peers, and develop my own auditing style.
+Before the fellowship, my auditing experience was mostly solo competitions. While that helped me sharpen my individual skills, the [yAudit Fellowship](https://yaudit.dev/fellowships) introduced me to a new way of working—collaborative auditing. Working with a team allowed me to see different approaches to problem-solving, learn from my peers, and develop my own auditing style.
 
-One of the *biggest takeaways* from the fellowship was understanding how I like to work: brainstorming, throwing out all my ideas, and bouncing thoughts off teammates. This collaborative experience helped me form professional relationships that continue to this day. Eventually, my journey through the fellowship opened the door to becoming an Electisec smart contract resident auditor, giving me a career path I genuinely love.
+One of the *biggest takeaways* from the fellowship was understanding how I like to work: brainstorming, throwing out all my ideas, and bouncing thoughts off teammates. This collaborative experience helped me form professional relationships that continue to this day. Eventually, my journey through the fellowship opened the door to becoming a yAudit smart contract resident auditor, giving me a career path I genuinely love.
 
-I have audited several protocols for Electisec since then, like [Sickle](https://reports.electisec.com/reports/05-2024-Sickle-3) and [Sofa Protocol](https://reports.electisec.com/reports/01-2025-Sofa-Protocol).
+I have audited several protocols for yAudit since then, like [Sickle](https://reports.yaudit.dev/reports/05-2024-Sickle-3) and [Sofa Protocol](https://reports.yaudit.dev/reports/01-2025-Sofa-Protocol).
 
 ## What's the one thing you wish you did differently when starting your auditing journey? 🤔
 Looking back, I wish I had gone *all-in* a lot sooner. When I first started competing in audit contests, I'd dedicate 2-3 hours per day: somehow I hadn't understood that my competition was putting in 8+ hours per day and treating competitions as a full-time job.
@@ -71,7 +71,7 @@ Ultimately, this very early videogame fever steered my life and studies towards 
 ## How do you spend your time outside auditing? 🌳
 Either at the gym lifting weights, enjoying a good audit contest report / incident post-mortem or struggling to finish Elden Ring 😮‍💨
 
-## Lastly, what do you enjoy the most about Electisec? 💚
+## Lastly, what do you enjoy the most about yAudit? 💚
 *The people* 🤝
 
-The Electisec team is formed entirely by heavyweights, and being able to regularly work alongside any of them is a true privilege.
+The yAudit team is formed entirely by heavyweights, and being able to regularly work alongside any of them is a true privilege.

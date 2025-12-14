@@ -1,7 +1,7 @@
 ---
 title: "FRI: Folding Polynomials and Catching Cheaters"
 subtitle: "Folding and Merkle trees, understand the magic behind STARKs"
-gh-repo: electisec/blog-site
+gh-repo: yaudit/blog-site
 tags: [cryptography, algebra, polynomial]
 author: teddav
 twitter: https://x.com/0xteddav
@@ -88,7 +88,7 @@ $$
 
 To commit to P(x), we evaluate **P(x), Q(x), and Z(x)** over an **extended domain**.
 
-This is where **Reed-Solomon encoding** comes in (if you're unfamiliar with it, check out my article: ["Reed-Solomon Codes"](https://blog.electisec.com/reed-solomon)). It introduces **redundancy** that prevents cheating, more on that below.
+This is where **Reed-Solomon encoding** comes in (if you're unfamiliar with it, check out my article: ["Reed-Solomon Codes"](https://blog.yaudit.dev/reed-solomon)). It introduces **redundancy** that prevents cheating, more on that below.
 
 The verifier then picks a **random point** `r` from the domain and checks:
 
@@ -242,7 +242,7 @@ F1 = Fe + alpha*Fo
 
 If the base field we’re using is small, challenge $\alpha$ needs to be sampled from a **field extension**. This prevents the prover from exploiting the small field structure to cheat.
 
-If you need a refresher on field extensions, check out my previous [article on extension fields](https://blog.electisec.com/binius-1-extension-fields).
+If you need a refresher on field extensions, check out my previous [article on extension fields](https://blog.yaudit.dev/binius-1-extension-fields).
 
 We'll first introduce the rest of the FRI process using only the **base field**. This will help build intuition about how degree reduction and verification work. Later, I'll revisit how the process changes when alpha **is sampled from a field extension**, and why this is necessary for security when working over small fields.
 

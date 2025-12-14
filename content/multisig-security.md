@@ -1,7 +1,7 @@
 ---
 title: Multisig Security Analysis
 subtitle: When is a Safe not so safe?
-gh-repo: electisec/blog-site
+gh-repo: yaudit/blog-site
 tags: [multisig, safe, config, tool]
 author: engn33r
 twitter: https://x.com/bl4ckb1rd71
@@ -15,7 +15,7 @@ Multisignature wallets have become the gold standard for securing large amounts 
 - **Multisig security web app**: Submit a multisig address and get a summary of the multisig's security profile
 - **Multisig security API**: An alternative to the user-friendly web app for services that wish to query multisig addresses
 - **Python script**: Want to run analysis locally without a web browser? This script has you covered.
-- **Open sourced repository**: The GitHub repository containing all of the above is available at https://github.com/electisec/multisig-security
+- **Open sourced repository**: The GitHub repository containing all of the above is available at https://github.com/yaudit/multisig-security
 
 There are limitations to what this automated tooling was able to accomplish. For example, it is not possible to determine whether multisig signers of a multisig properly follow a [secure signing process](https://frameworks.securityalliance.org/wallet-security/secure-multisig-signing-process), whether the addresses on a multisig are hardware wallets or EOA, and because https://revoke.cash/ has no public API, this tool cannot automatically display a multisig's unused token allowances that could put value at risk if the contract with a non-zero allowance is hacked or malicious. Additionally, some of the checks in this tool do not clearly indicate the configuration is good or bad. Examples of this include whether a Safe has an optional module installed and whether a signer of a multisig is a contract. Such cases require deeper manual investigation to reach proper conclusions. Therefore, this tool should NOT be considered anything close to a comprehensive analysis of a multisig's security posture, but instead should be considered as a quick and easy way to identify glaring errors in a multisig's configuration.
 
@@ -39,15 +39,15 @@ This repository provides three different ways to analyze multisig security, each
 
 ### 1. Web Application
 
-The primary interface is a user-friendly web application intended for manual analysis. This app lives at https://safe.electisec.com/. Simply enter a multisig address and get immediate results, or choose an example address to see how the tool works. And if you want to share the results for a specific contract with friends, there is a "Share" button designed for that exact use case.
+The primary interface is a user-friendly web application intended for manual analysis. This app lives at https://safe.yaudit.dev/. Simply enter a multisig address and get immediate results, or choose an example address to see how the tool works. And if you want to share the results for a specific contract with friends, there is a "Share" button designed for that exact use case.
 
 ### 2. Web Application API
 
-For developers and services that wish to integrate multisig security analysis into their own applications, the web app also offers a REST API endpoint. This allows programmatic access to all security analysis functionality. You can access the API with the same URL that the "share" button uses, but with "api/" added to the URL. For example, https://safe.electisec.com/api/1/0x73b047fe6337183A454c5217241D780a932777bD/ is an example of an API URL that returns the analysis results in JSON format.
+For developers and services that wish to integrate multisig security analysis into their own applications, the web app also offers a REST API endpoint. This allows programmatic access to all security analysis functionality. You can access the API with the same URL that the "share" button uses, but with "api/" added to the URL. For example, https://safe.yaudit.dev/api/1/0x73b047fe6337183A454c5217241D780a932777bD/ is an example of an API URL that returns the analysis results in JSON format.
 
 ### 3. Python Script
 
-For users who prefer local command-line tools, want to do batch analysis research on many multisigs, or look to integrate this tool with an existing local toolchain, a standalone Python script offers the same comprehensive security analysis functionality. The script is located in the [python_script directory](https://github.com/electisec/multisig-security/tree/main/python_script). If you will use the script a lot, you will probably find some benefit if you change the default RPC endpoints, because the script defaults are public endpoints from https://chainlist.org/.
+For users who prefer local command-line tools, want to do batch analysis research on many multisigs, or look to integrate this tool with an existing local toolchain, a standalone Python script offers the same comprehensive security analysis functionality. The script is located in the [python_script directory](https://github.com/yaudit/multisig-security/tree/main/python_script). If you will use the script a lot, you will probably find some benefit if you change the default RPC endpoints, because the script defaults are public endpoints from https://chainlist.org/.
 
 The only external dependency of this script is the popular requests library, so before running the script, use `pip3 install requests`.
 

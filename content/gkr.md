@@ -1,7 +1,7 @@
 ---
 title: "GKR: Sumcheck's best friend"
 subtitle: "Verifying Computations Layer by Layer"
-gh-repo: electisec/blog-site
+gh-repo: yaudit/blog-site
 tags: [cryptography, algebra, polynomial]
 author: teddav
 twitter: https://x.com/0xteddav

@@ -46,12 +46,12 @@ const ReportCard: React.FC<BlogCardProps> = ({
         </div>
         <p className="text-body">{subtitle}</p>
       </div>
-      <div className="p-8 flex flex-col">
-        <div className="flex flex-wrap gap-2 mb-3">
+      <div className="p-8 flex flex-col md:hidden sm:hidden">
+        <div className="flex flex-wrap gap-2 mb-3 flex-row-reverse">
           {tags.map((tag, index) => (
             <span
               key={index}
-              className="inline-flex items-center px-2.5 py-0.5 text-xs font-medium bg-deepblue text-white dark:bg-deepblue dark:text-white"
+              className="inline-flex items-center px-2.5 py-0.5 text-xs font-medium text-deepblue "
             >
               {tag}
             </span>

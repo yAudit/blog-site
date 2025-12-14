@@ -1,7 +1,7 @@
 ---
 title: "From 0 to Bi(ge)nius: field extensions"
 subtitle: "𝔽₂ and Beyond: A Gentle Guide to Field Extensions"
-gh-repo: electisec/blog-site
+gh-repo: yaudit/blog-site
 tags: [cryptography, algebra]
 author: teddav
 twitter: https://x.com/0xteddav
