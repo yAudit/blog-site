@@ -4,8 +4,6 @@ import React from "react";
 import { CalendarIcon, MailIcon, PencilIcon, BookCopyIcon } from "lucide-react";
 import { useTheme } from "@/lib/ThemeContext";
 
-import { cn } from "@/lib/utils";
-import { buttonVariants } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import {
   Tooltip,
