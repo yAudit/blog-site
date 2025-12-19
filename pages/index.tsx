@@ -1,5 +1,6 @@
 import { useState, useMemo, useEffect } from "react";
 import { GetStaticProps } from "next";
+import Head from "next/head";
 import SearchBar from "../components/SearchBar";
 import ReportCard from "../components/BlogCard";
 import matter from "gray-matter";
@@ -91,10 +92,28 @@ export default function Home({ blogs }: HomeProps) {
   };
 
   return (
-    <div className="min-h-screen bg-background">
-      <main className="max-w-6xl mx-auto py-6 sm:px-6 lg:px-8">
-        <div className="px-4 sm:px-0 mb-8 text-foreground/70">
-          <SearchBar onSearch={handleSearch} />
+    <>
+      <Head>
+        <title>yAudit Blog - Zero Knowledge & Smart Contract Security</title>
+        <meta name="description" content="Expert insights on zero-knowledge proofs, smart contract security audits, blockchain vulnerabilities, and cutting-edge cryptography research from the yAudit security team." />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://blog.yaudit.dev" />
+        <meta property="og:title" content="yAudit Blog - ZK & Smart Contract Security Research" />
+        <meta property="og:description" content="Expert insights on zero-knowledge proofs, smart contract security audits, blockchain vulnerabilities, and cutting-edge cryptography research from the yAudit security team." />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://blog.yaudit.dev" />
+        <meta name="twitter:title" content="yAudit Blog - ZK & Smart Contract Security Research" />
+        <meta name="twitter:description" content="Expert insights on zero-knowledge proofs, smart contract security audits, blockchain vulnerabilities, and cutting-edge cryptography research from the yAudit security team." />
+      </Head>
+
+      <div className="min-h-screen bg-background">
+        <main className="max-w-6xl mx-auto py-6 sm:px-6 lg:px-8">
+          <div className="px-4 sm:px-0 mb-8 text-foreground/70">
+            <SearchBar onSearch={handleSearch} />
           <div className="flex flex-wrap gap-2 mx-auto mt-4 justify-center">
             {tags.map((tag, index) => (
               <button
@@ -127,6 +146,7 @@ export default function Home({ blogs }: HomeProps) {
         </div>
       </main>
     </div>
+    </>
   );
 }
 

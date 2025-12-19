@@ -6,7 +6,7 @@ export default function Document() {
     <Html lang="en">
       <Head>
         <meta charSet="utf-8" />
-        <meta name="description" content="ZK & Smart Contract Security" />
+        <meta name="description" content="Expert insights on zero-knowledge proofs, smart contract security audits, blockchain vulnerabilities, and cutting-edge cryptography research from the yAudit security team." />
         <meta
           name="keywords"
           content="yAudit, Zero Knowledge, Smart Contract Security, Blockchain Security, Ethereum, Cryptography, DeFi"
@@ -17,21 +17,27 @@ export default function Document() {
 
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://blog.yaudit.dev" />
-        <meta property="og:title" content="yAudit" />
+        <meta property="og:title" content="yAudit Blog - ZK & Smart Contract Security Research" />
         <meta
           property="og:description"
-          content="ZK & Smart Contract Security"
+          content="Expert insights on zero-knowledge proofs, smart contract security audits, blockchain vulnerabilities, and cutting-edge cryptography research from the yAudit security team."
         />
         <meta property="og:site_name" content="yAudit" />
         <meta
           property="og:image"
-          content="https://yaudit.dev/twitter.png"
+          content="https://blog.yaudit.dev/twitter.png"
         />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="yAudit - Zero Knowledge and Smart Contract Security" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@yaudit" />
         <meta name="twitter:creator" content="@yaudit" />
-        <meta name="twitter:image" content="https://yaudit.dev/twitter.png" />
+        <meta name="twitter:title" content="yAudit Blog - ZK & Smart Contract Security Research" />
+        <meta name="twitter:description" content="Expert insights on zero-knowledge proofs, smart contract security audits, blockchain vulnerabilities, and cutting-edge cryptography research from the yAudit security team." />
+        <meta name="twitter:image" content="https://blog.yaudit.dev/twitter.png" />
+        <meta name="twitter:image:alt" content="yAudit - Zero Knowledge and Smart Contract Security" />
 
         <link rel="icon" href="/favicon.ico" />
         <link
