@@ -4,7 +4,6 @@ import Navbar from "../components/Navbar";
 import { Space_Grotesk } from "next/font/google";
 import Head from "next/head";
 import Footer from "@/components/Footer";
-import { ThemeProvider } from "@/lib/ThemeContext";
 import HighlightTheme from "@/components/HighlightTheme";
 
 
@@ -20,15 +19,13 @@ export default function App({ Component, pageProps }: AppProps) {
         <title>yAudit Blogs</title>
       </Head>
 
-      <ThemeProvider>
-        <HighlightTheme />
-        {/* <MermaidTheme /> */}
-        <main className={spaceGrotesk.className}>
-          <Navbar />
-          <Component {...pageProps} />
-          <Footer />
-        </main>
-      </ThemeProvider>
+      <HighlightTheme />
+      {/* <MermaidTheme /> */}
+      <main className={spaceGrotesk.className}>
+        <Navbar />
+        <Component {...pageProps} />
+        <Footer />
+      </main>
     </>
   );
 }

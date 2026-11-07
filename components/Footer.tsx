@@ -2,7 +2,6 @@
 
 import React from "react";
 import { CalendarIcon, MailIcon, PencilIcon, BookCopyIcon } from "lucide-react";
-import { useTheme } from "@/lib/ThemeContext";
 
 import { Separator } from "@/components/ui/separator";
 import {
@@ -14,13 +13,11 @@ import {
 import { Dock, DockIcon } from "@/components/ui/dock";
 
 export default function Footer() {
-  const { theme } = useTheme();
-
   return (
     <div className="h-full flex flex-col bg-background justify-center p-16 items-center relative">
       <img
         alt="yAudit Logo"
-        src={theme === 'light' ? "/logo.svg" : "/darklogo.svg"}
+        src="/logo.svg"
         className="h-[5rem]"
       />
       <DockDemo />

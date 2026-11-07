@@ -45,6 +45,13 @@
     transition-timing-function: var(--transition-timing);
     transition-duration: var(--transition-duration);
   }
+
+  /* Keep anchor targets (e.g. footnotes) clear of the sticky navbar. A
+     scroll-padding on html would also scroll the page whenever a navbar
+     link or button gets focus. */
+  [id] {
+    scroll-margin-top: 5rem;
+  }
 }
 
 body {
