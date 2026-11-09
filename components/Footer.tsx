@@ -1,10 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
-
 import React from "react";
-import { CalendarIcon, MailIcon, PencilIcon, BookCopyIcon } from "lucide-react";
-import { useTheme } from "@/lib/ThemeContext";
+import { MailIcon } from "lucide-react";
 
-import { Separator } from "@/components/ui/separator";
+import { cn } from "@/lib/utils";
+import { buttonVariants } from "@/components/ui/button";
 import {
   Tooltip,
   TooltipContent,
@@ -13,38 +12,24 @@ import {
 } from "@/components/ui/tooltip";
 import { Dock, DockIcon } from "@/components/ui/dock";
 
+// Same footer as yaudit.dev (yAudit/website, src/modules/Footer). Colors are
+// set explicitly so that this site's theme variables don't change them.
 export default function Footer() {
-  const { theme } = useTheme();
-
   return (
-    <div className="h-full flex flex-col bg-background justify-center p-16 items-center relative">
-      <img
-        alt="yAudit Logo"
-        src={theme === 'light' ? "/logo.svg" : "/darklogo.svg"}
-        className="h-[5rem]"
-      />
-      <DockDemo />
-      <p className="text-sm text-body mt-10 text-center">
-        Copyright © 2026 yAudit. All rights reserved.
+    <div className="h-full flex flex-col bg-gray-100 text-black justify-center p-16 items-center relative">
+      <img alt="" src="/logo.svg" className="h-[5rem]" />
+      <SocialDock />
+      <p className="text-sm text-zinc-500 mt-10 text-center">
+        Copyright © {new Date().getFullYear()} yAudit. All rights reserved.
       </p>
     </div>
   );
 }
 
-export type IconProps = React.HTMLAttributes<SVGElement>;
+type IconProps = React.HTMLAttributes<SVGElement>;
 
-export const Icons = {
-  calendar: (props: IconProps) => <CalendarIcon {...props} />,
+const Icons = {
   email: (props: IconProps) => <MailIcon {...props} />,
-  linkedin: (props: IconProps) => (
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" {...props}>
-      <title>LinkedIn</title>
-      <path
-        fill="currentColor"
-        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
-      />
-    </svg>
-  ),
   x: (props: IconProps) => (
     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" {...props}>
       <title>X</title>
@@ -77,81 +62,37 @@ export const Icons = {
   ),
 };
 
-const DATA = {
-  navbar: [
-    {
-      href: "https://reports.yaudit.dev",
-      icon: BookCopyIcon,
-      label: "Reports",
-    },
-    { href: "https://blog.yaudit.dev", icon: PencilIcon, label: "Blog" },
-  ],
-  contact: {
-    social: {
-      GitHub: {
-        name: "GitHub",
-        url: "https://www.github.com/yaudit",
-        icon: Icons.github,
-      },
-      X: {
-        name: "X",
-        url: "https://www.x.com/yAuditDAO",
-        icon: Icons.x,
-      },
-      youtube: {
-        name: "YouTube",
-        url: "https://www.youtube.com/@yaudit",
-        icon: Icons.youtube,
-      },
-      email: {
-        name: "Send Email",
-        url: "mailto:hello@yaudit.dev",
-        icon: Icons.email,
-      },
-    },
-  },
-};
+const SOCIAL = [
+  { name: "GitHub", url: "https://github.com/yAudit", icon: Icons.github },
+  { name: "X", url: "https://www.x.com/yAuditDAO", icon: Icons.x },
+  { name: "YouTube", url: "https://www.youtube.com/@yAudit", icon: Icons.youtube },
+  { name: "Send Email", url: "mailto:hello@yaudit.dev", icon: Icons.email },
+];
 
-export function DockDemo() {
+function SocialDock() {
   return (
-    <div className="relative flex flex-col items-center justify-center text-title">
+    <div className="relative flex flex-col items-center justify-center">
       <TooltipProvider>
-        <Dock direction="middle">
-          {DATA.navbar.map((item) => (
-            <DockIcon key={item.label}>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <a
-                    href={item.href}
-                    target="_blank"
-                    aria-label={item.label}
-                    className="inline-flex items-center justify-center size-14 rounded-full"
-                  >
-                    <item.icon className="size-4" />
-                  </a>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>{item.label}</p>
-                </TooltipContent>
-              </Tooltip>
-            </DockIcon>
-          ))}
-          <Separator orientation="vertical" className="h-full" />
-          {Object.entries(DATA.contact.social).map(([name, social]) => (
-            <DockIcon key={name}>
+        <Dock direction="middle" className="border-neutral-200">
+          {SOCIAL.map((social) => (
+            <DockIcon key={social.name}>
               <Tooltip>
                 <TooltipTrigger asChild>
                   <a
                     href={social.url}
                     target="_blank"
+                    rel="noopener noreferrer"
                     aria-label={social.name}
-                    className="inline-flex items-center justify-center size-12 rounded-full"
+                    className={cn(
+                      buttonVariants({ variant: "ghost", size: "icon" }),
+                      "size-12 rounded-none hover:bg-neutral-100 hover:text-neutral-900"
+                    )}
                   >
                     <social.icon className="size-4" />
                   </a>
                 </TooltipTrigger>
-                <TooltipContent>
-                  <p>{name}</p>
+                <TooltipContent className="rounded-none bg-neutral-900 text-neutral-50">
+                  <p>{social.name}</p>
                 </TooltipContent>
               </Tooltip>
             </DockIcon>

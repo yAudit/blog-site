@@ -1,4 +1,5 @@
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo } from "react";
+import { useRouter } from "next/router";
 import { GetStaticProps } from "next";
 import Head from "next/head";
 import SearchBar from "../components/SearchBar";
@@ -22,27 +23,20 @@ interface HomeProps {
 
 export default function Home({ blogs }: HomeProps) {
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedTags, setSelectedTags] = useState<string[]>([]);
+  const router = useRouter();
 
   const tags = useMemo(() => [...new Set(blogs.map((report) => report.tags).flat())], [blogs]);
 
-  // Enhanced useEffect to handle multiple URL tags
-  useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    const tagParam = params.get("tag");
-
-    if (tagParam) {
-      // Split the tag parameter by commas and filter out any invalid tags
-      const urlTags = tagParam
-        .split(",")
-        .map((tag) => tag.trim())
-        .filter((tag) => tags.includes(tag));
-
-      if (urlTags.length > 0) {
-        setSelectedTags(urlTags);
-      }
-    }
-  }, [tags]);
+  // The selected tags live in the URL (?tag=a,b), so a filtered list can be
+  // shared and survives a reload. Unknown tags are ignored.
+  const selectedTags = useMemo(() => {
+    const param = router.query.tag;
+    const raw = Array.isArray(param) ? param.join(",") : param ?? "";
+    return raw
+      .split(",")
+      .map((tag) => tag.trim())
+      .filter((tag) => tags.includes(tag));
+  }, [router.query.tag, tags]);
 
   const filteredBlogs = useMemo(() => {
     const query = searchQuery?.toLowerCase();
@@ -63,32 +57,15 @@ export default function Home({ blogs }: HomeProps) {
     setSearchQuery(query);
   };
 
-  // Enhanced tag selection handler for multiple tags
   const handleTagSelection = (tag: string) => {
-    setSelectedTags((prevTags) => {
-      const newTags = prevTags.includes(tag)
-        ? prevTags.filter((t) => t !== tag)
-        : [...prevTags, tag];
-
-      // Update URL with all selected tags
-      const params = new URLSearchParams(window.location.search);
-      if (newTags.length > 0) {
-        params.set("tag", newTags.join(","));
-      } else {
-        params.delete("tag");
-      }
-
-      // Update URL without refreshing the page
-      window.history.replaceState(
-        {},
-        "",
-        `${window.location.pathname}${
-          newTags.length ? `?${params.toString()}` : ""
-        }`
-      );
-
-      return newTags;
-    });
+    const newTags = selectedTags.includes(tag)
+      ? selectedTags.filter((t) => t !== tag)
+      : [...selectedTags, tag];
+    router.replace(
+      { pathname: router.pathname, query: newTags.length ? { tag: newTags.join(",") } : {} },
+      undefined,
+      { shallow: true, scroll: false }
+    );
   };
 
   return (

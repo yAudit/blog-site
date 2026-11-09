@@ -39,7 +39,9 @@ export default function Document() {
         <meta name="twitter:image" content="https://blog.yaudit.dev/twitter.png" />
         <meta name="twitter:image:alt" content="yAudit - Zero Knowledge and Smart Contract Security" />
 
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/icon.png" type="image/png" sizes="512x512" />
+        <link rel="apple-touch-icon" href="/icon.png" />
         <link
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"
@@ -84,101 +86,41 @@ export default function Document() {
   {`
     import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
     
-    // Theme configuration
-    const themes = {
-      light: {
-        theme: 'base',
-        themeVariables: {
-          primaryColor: '#0055FF',
-          primaryTextColor: '#ffffff',
-          primaryBorderColor: '#e5e7eb',
-          lineColor: '#0055FF',
-          secondaryColor: '#f5f5f5',
-          tertiaryColor: '#0055FF',
-          background: '#fdfdfd',
-          mainBkg: '#f3f3f3',
-          secondBkg: '#f5f5f5',
-          tertiaryBkg: '#e9e9e9',
-          primaryTextColor: '#000000',
-          pie1: '#0055FF',
-          pie2: '#0055FF',
-          pie3: '#f5f5f5',
-          pie4: '#e9e9e9'
-        }
-      },
-      dark: {
-        theme: 'base',
-        themeVariables: {
-          darkMode: true,
-          primaryColor: '#0055FF',
-          primaryTextColor: '#ffffff',
-          primaryBorderColor: '#2a2a2a',
-          lineColor: '#0055FF',
-          secondaryColor: '#1a1a1a',
-          tertiaryColor: '#0055FF',
-          background: '#021e1a',
-          mainBkg: '#032823',
-          secondBkg: '#1a1a1a',
-          tertiaryBkg: '#021e1a',
-          primaryTextColor: '#ededed',
-          secondaryTextColor: '#ffffff63',
-          pie1: '#0055FF',
-          pie2: '#0055FF',
-          pie3: '#032823',
-          pie4: '#1a1a1a'
-        }
+    // Theme configuration. The site is light only.
+    const theme = {
+      theme: 'base',
+      themeVariables: {
+        primaryColor: '#0055FF',
+        primaryTextColor: '#ffffff',
+        primaryBorderColor: '#e5e7eb',
+        lineColor: '#0055FF',
+        secondaryColor: '#f5f5f5',
+        tertiaryColor: '#0055FF',
+        background: '#fdfdfd',
+        mainBkg: '#f3f3f3',
+        secondBkg: '#f5f5f5',
+        tertiaryBkg: '#e9e9e9',
+        primaryTextColor: '#000000',
+        pie1: '#0055FF',
+        pie2: '#0055FF',
+        pie3: '#f5f5f5',
+        pie4: '#e9e9e9'
       }
     };
 
-    // Helper functions
-    const isDarkMode = () => document.documentElement.classList.contains('dark') || 
-                             window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
-    const resetDiagrams = () => {
-      document.querySelectorAll('.mermaid').forEach(element => {
-        element.removeAttribute('data-processed');
-        element.innerHTML = element.textContent;
-      });
-    };
-
-    // Initialize mermaid with the appropriate theme
     const initMermaid = () => {
-      const currentTheme = isDarkMode() ? themes.dark : themes.light;
-      mermaid.initialize({ 
+      mermaid.initialize({
         startOnLoad: true,
-        ...currentTheme
+        ...theme
       });
     };
 
-    // Update diagrams when theme changes
-    const updateDiagrams = () => {
-      resetDiagrams();
-      const currentTheme = isDarkMode() ? themes.dark : themes.light;
-      mermaid.initialize({ 
-        startOnLoad: false,
-        ...currentTheme
-      });
-      setTimeout(() => mermaid.run(), 100);
-    };
-    
     // Initialize on load
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', initMermaid);
     } else {
       setTimeout(initMermaid, 0);
     }
-    
-    // Watch for theme changes
-    new MutationObserver(mutations => {
-      mutations.forEach(mutation => {
-        if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
-          updateDiagrams();
-        }
-      });
-    }).observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ['class']
-    });
   `}
 </Script>
         <Script
