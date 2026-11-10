@@ -71,7 +71,8 @@ export default function ReportPage({
       </Head>
 
       <main className="min-h-screen bg-background">
-        <article className="max-w-6xl mx-auto px-4 py-10">
+        {/* The same side margins as the navbar (components/Navbar.tsx). */}
+        <article className="py-10 px-6 lg:px-[max(2rem,min(20vw,calc((100vw_-_1000px)/2)))]">
           <Link href="/" className="inline-block mb-4">
             <h2 className="text-xl text-title">← Back to Blogs</h2>
           </Link>

@@ -88,8 +88,11 @@ export default function Home({ blogs }: HomeProps) {
       </Head>
 
       <div className="min-h-screen bg-background">
-        <main className="max-w-6xl mx-auto py-6 sm:px-6 lg:px-8">
-          <div className="px-4 sm:px-0 mb-8 text-foreground/70">
+        {/* The same side margins as the navbar (components/Navbar.tsx), so the
+            search and the cards start under the logo and end under the
+            Contact button. */}
+        <main className="py-6 px-6 lg:px-[max(2rem,min(20vw,calc((100vw_-_1000px)/2)))]">
+          <div className="mb-8 text-foreground/70">
             <SearchBar onSearch={handleSearch} />
           <div className="flex flex-wrap gap-2 mx-auto mt-4 justify-center">
             {tags.map((tag, index) => (
@@ -106,7 +109,7 @@ export default function Home({ blogs }: HomeProps) {
           </div>
         </div>
 
-        <div className="mt-8 grid gap-6 px-4 sm:px-0 grid-cols-1">
+        <div className="mt-8 grid gap-6 grid-cols-1">
           {filteredBlogs.length > 0 ? (
             filteredBlogs.map((report, index) => (
               <ReportCard key={index} {...report} />
